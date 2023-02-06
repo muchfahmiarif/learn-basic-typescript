@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "tsc": "rm -rf build/ && tsc",
+    "ts": "tsc -w",
+    "dev": "nodemon ./build/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.5"
+  }
+}
