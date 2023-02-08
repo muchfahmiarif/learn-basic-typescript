@@ -27,10 +27,12 @@ exports.People = People;
 // private = hanya bisa diakses dari class itu sendiri
 // protected = hanya bisa diakses dari class itu sendiri dan class turunannya
 class Admin extends People {
-    constructor() {
-        super(...arguments);
+    constructor(name, age, phone) {
+        super(name, age);
         this.read = true;
         this.write = true;
+        this._email = ``;
+        this.phone = phone;
     }
     getRole() {
         return {
@@ -38,8 +40,24 @@ class Admin extends People {
             write: this.write,
         };
     }
+    // setter (untuk validasi)
+    set email(value) {
+        if (value.length > 5) {
+            this._email = value;
+        }
+        else {
+            this._email = `Email salah`;
+        }
+    }
+    // getter (untuk get value)
+    get email() {
+        return this._email;
+    }
 }
-let admin = new Admin(`Fahmi`, 25);
+let admin = new Admin(`Fahmi`, 25, `08123456789`);
 admin.getName();
 admin.getRole();
 admin.setName(`Fahmi`);
+admin.phone;
+admin.email = `@.com`;
+console.log(admin.email);

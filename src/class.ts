@@ -31,6 +31,7 @@ class Admin extends People {
   read: boolean = true;
   write: boolean = true;
   phone: string;
+  private _email: string = ``;
 
   constructor(name: string, age: number, phone: string) {
     super(name, age);
@@ -43,9 +44,27 @@ class Admin extends People {
       write: this.write,
     };
   }
+
+  // setter (untuk validasi)
+  set email(value: string) {
+    if (value.length > 5) {
+      this._email = value;
+    } else {
+      this._email = `Email salah`;
+    }
+  }
+
+  // getter (untuk get value)
+  get email(): string {
+    return this._email;
+  }
 }
 
 let admin = new Admin(`Fahmi`, 25, `08123456789`);
 admin.getName();
 admin.getRole();
 admin.setName(`Fahmi`);
+admin.phone;
+
+admin.email = `@.com`;
+console.log(admin.email);
