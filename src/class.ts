@@ -32,10 +32,15 @@ class Admin extends People {
   write: boolean = true;
   phone: string;
   private _email: string = ``;
+  static getRoleName: string = `Admin`;
 
   constructor(name: string, age: number, phone: string) {
     super(name, age);
     this.phone = phone;
+  }
+
+  static getNameRole(): string {
+    return `Hei Admin`;
   }
 
   getRole(): { read: boolean; write: boolean } {
@@ -60,11 +65,17 @@ class Admin extends People {
   }
 }
 
-let admin = new Admin(`Fahmi`, 25, `08123456789`);
-admin.getName();
-admin.getRole();
-admin.setName(`Fahmi`);
-admin.phone;
+// let admin = new Admin(`Fahmi`, 25, `08123456789`);
+// admin.getName();
+// admin.getRole();
+// admin.setName(`Fahmi`);
+// admin.phone;
 
-admin.email = `@.com`;
-console.log(admin.email);
+// admin.email = `@.com`;
+// console.log(admin.email);
+
+let admin = Admin.getRoleName;
+console.log(admin);
+
+let role = Admin.getNameRole();
+console.log(role);
