@@ -3,7 +3,7 @@ function getData(value: any) {
 }
 
 console.log(getData(`Fahmi`).length);
-console.log(getData(123));\
+console.log(getData(123));
 
 // Generic
 function myData<T>(value: T) {
@@ -16,9 +16,9 @@ console.log(myData(123));
 // Generic Arrow Function\
 const arrowData = <T>(value: T) => {
   return value;
-}
+};
 
 // Generic pada jsx
 const jsx = <T extends {}>(value: T) => {
   return value;
-}
+};

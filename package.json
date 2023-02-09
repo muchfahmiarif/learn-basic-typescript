@@ -2,7 +2,7 @@
   "scripts": {
     "tsc": "rm -rf build/ && tsc",
     "ts": "tsc -w",
-    "dev": "nodemon ./build/generic.js"
+    "dev": "nodemon ./build/genericClass.js"
   },
   "devDependencies": {
     "nodemon": "^2.0.20",
